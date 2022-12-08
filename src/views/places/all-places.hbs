@@ -1,0 +1,36 @@
+<div class="row">
+  {{#each places}}
+  <div class="col-md-3">
+    <div class="card mt-0">
+      <div class="card-text text-center bg-black text-white">
+        <form action="/subscriptions/start-subscription/{{_id}}" method="POST">
+          <input type="hidden" name="_method" value="POST">
+          <button class="btn btn-block my-auto">{{namePlace}}</button>
+        </form>
+      </div>
+      <img class="card-img-top" src="{{ photo }}" alt="Imagen" height="200px" width="100px">
+      <div class="card-text text-center text-uppercase">
+        <ul class="list-group">
+          <li class="list-group-item" style="background-color: rgb(242, 191, 64);">Medio de transporte: {{firstCar}}, precio: {{priceFirstCar}}</li>
+          <li class="list-group-item text-light" style="background-color: rgb(45, 77, 209);">Medio de transporte: {{secondCar}}, precio: {{priceSecondCar}}</li>
+        </ul>
+      </div>
+      <form action="/places/delete/{{_id}}?_method=DELETE" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="btn btn-danger w-100">
+          DELETE
+          <i class="fas fa-trash"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+  {{else}}
+  <div class="card mx-auto">
+    <div class="card-body">
+      <h1>Hello</h1>
+      <p clsss="lead">There are not places yet.</p>
+      <a href="/places/add" class="btn" style="background-color: rgb(242, 191, 64);">Create One!</a>
+    </div>
+  </div>
+  {{/each}}
+</div>

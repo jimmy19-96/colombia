@@ -1,0 +1,35 @@
+<div class="row">
+  {{#each subscriptions}}
+  <div class="col-md-3">
+    <div class="card mt-0">
+      <div class="card-text text-center bg-black text-white">
+        <p class="my-auto">
+          {{nameDestination}}
+          <i class="fas fa-plane"></i>
+        </p>
+      </div>
+      <div class="card-text text-center text-uppercase">
+        <ul class="list-group">
+          <li class="list-group-item" style="background-color: rgb(242, 191, 64);">Medio de transporte: {{data.[0].car}}, precio: {{data.[0].price}}</li>
+          <li class="list-group-item" style="background-color: rgb(45, 77, 209);">Nombre: {{data.[0].nameUser}}</li>
+        </ul>
+      </div>
+      <form action="/subscriptions/delete/{{_id}}?_method=DELETE" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="btn btn-danger w-100">
+          CANCEL
+          <i class="fas fa-trash"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+  {{else}}
+  <div class="card mx-auto">
+    <div class="card-body">
+      <h1>Hello</h1>
+      <p clsss="lead">There are not subscriptions yet.</p>
+      <a href="/places" class="btn" style="background-color: rgb(242, 191, 64);">Create One!</a>
+    </div>
+  </div>
+  {{/each}}
+</div>

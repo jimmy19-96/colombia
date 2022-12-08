@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-md-4 mx-auto">
+    <div class="card bg-black text-white rounded">
+      <div class="card-header text-center pt-3">
+        <h3 class="text-white">New Place</h3>
+      </div>
+      <div class="card-body">
+        <form action="/places/new-place" method="POST">
+          <div class="mb-3">
+            <label for="Name of the place">Name of the place</label>
+            <input
+              type="text"
+              name="namePlace"
+              class="form-control bg-dark text-white"
+              autofocus
+            />
+          </div>
+          <div class="mb-3">
+            <label for="Name of the first car">Car</label>
+            <input
+              type="text"
+              name="firstCar"
+              class="form-control bg-dark text-white"
+              autofocus
+            />
+          </div>
+          <div class="mb-3">
+            <label for="Name of the second car">Car</label>
+            <input
+              type="text"
+              name="secondCar"
+              class="form-control bg-dark text-white"
+              autofocus
+            />
+          </div>
+          <div class="mb-3">
+            <label for="Price of the first car">Price First Car</label>
+            <input
+              type="number"
+              name="priceFirstCar"
+              class="form-control bg-dark text-white"
+              autofocus
+            />
+          </div>
+          <div class="mb-3">
+            <label for="Price of the second car">Price Second Car</label>
+            <input
+              type="number"
+              name="priceSecondCar"
+              class="form-control bg-dark text-white"
+              autofocus
+            />
+          </div>
+          <div class="mb-3">
+            <label for="Photo of the place">Photo</label>
+            <input
+              type="text"
+              name="photo"
+              class="form-control bg-dark text-white"
+              autofocus
+            />
+          </div>
+          <button class="btn btn-primary w-100" style="background-color: rgb(242, 191, 64);" type="submit">
+            Create
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
